@@ -1,0 +1,24 @@
+<div ng-controller="userController as UC">
+  <div class="card">
+    <div class="card-content blue-grey z-depth-2">
+      <div class="card-title"> All User </div>
+      <table class="centered">
+        <thead>
+        <tr>
+          <th>Players</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in UC.users">
+          <td>{{user.name}}</td>
+          <td><a href="#!/edit/{{user.id}}" class="btn-flat green waves-effect">Edit User</a></td>
+
+          <td><button class="btn-flat red waves-effect" ng-click="UC.removeUser(user)">Delete User</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

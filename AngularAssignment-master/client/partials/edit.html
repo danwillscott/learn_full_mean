@@ -1,0 +1,14 @@
+<div ng-controller="editController as EC">
+  <div class="card">
+    <div class="card-content blue-grey z-depth-2">
+      <div class="card-title"> Edit User </div>
+      <h4>You are Editing: {{EC.edited.name}}</h4>
+      <form>
+        <label class="black-text" for="name">Name</label>
+        <input id="name" type="text" ng-model="EC.editedUser.name">
+        <!--When the button is clicked, run the create function-->
+        <button class="btn-flat waves-effect green" type="submit" ng-click="EC.editUser(EC.edited, EC.editedUser)">Create user</button>
+      </form>
+    </div>
+  </div>
+</div>

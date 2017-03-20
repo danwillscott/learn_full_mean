@@ -1,0 +1,13 @@
+<div ng-controller="userController as UC">
+  <div class="card">
+    <div class="card-content blue-grey z-depth-2">
+      <div class="card-title"> New User </div>
+      <form>
+        <label class="black-text" for="name">Name</label>
+        <input id="name" type="text" ng-model="UC.user.name">
+        <!--When the button is clicked, run the create function-->
+        <button class="btn-flat waves-effect green" type="submit" ng-click="UC.newUser(UC.user)">Create user</button>
+      </form>
+    </div>
+  </div>
+</div>

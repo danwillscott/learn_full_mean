@@ -1,0 +1,28 @@
+<div ng-controller="teamController as TC">
+  <div class="card">
+    <div class="card-content blue-grey z-depth-2">
+      <div class="card-title"> Manage Teams </div>
+      <form>
+        <label class="black-text" for="name">Team Name</label>
+        <input id="name" type="text" ng-model="TC.team.teamName">
+        <button class="btn-flat waves-effect green" type="submit" ng-click="TC.newTeam(TC.team)">Create user</button>
+      </form>
+      <table class="centered">
+        <thead>
+        <tr>
+          <th>Teams</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="team in TC.teams">
+          <td>{{team.teamName}}</td>
+          <td><button class="btn-flat red waves-effect" ng-click="TC.removeTeam(team)">Delete Team</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+</div>

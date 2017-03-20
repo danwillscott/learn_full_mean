@@ -1,0 +1,48 @@
+<div ng-controller="joinController as JC">
+  <h3 class="center">Add Players to teams</h3>
+  <form class="row">
+    <div class="col s1"></div>
+    <div class="col s3">
+      <label for="playerSelect">Select A Team</label>
+      <select id="playerSelect" ng-model="JS.selectValue.team">
+        <option disabled value="">Select a Team</option>
+        <option ng-click="JC.joinError = ''"  ng-repeat="team in JC.teams" ng-value="team">{{team.teamName}}</option>
+      </select>
+    </div>
+    <div class="col s1"></div>
+    <div class="col s3">
+      <label for="teamSelect">Select A Player</label>
+      <select id="teamSelect" ng-model="JS.selectValue.player">
+        <option disabled value="">Select A Player</option>
+        <option ng-repeat="player in JC.players" ng-value="player" ng-bind="player.name"></option>
+      </select>
+    </div>
+    <div class="col s1"></div>
+    <button class="col s3 btn-large blue" ng-click="JC.newJoin(JS.selectValue)">Join Team</button>
+  </form>
+  <h4 class="red-text" ng-bind="JC.joinError"></h4>
+
+  <h3 class="center">Assigned Players</h3>
+  <table class="centered">
+    <thead>
+    <tr>
+      <th>Team</th>
+      <th>Player</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody ng-repeat="team in JC.teams | orderBy:'name'" ng-if="team.players.length > 0">
+    <tr ng-repeat="player in team.players">
+      <td ng-bind="team.teamName"></td>
+      <td ng-bind="player.name"></td>
+      <td><button class="btn red" ng-click="JC.leaveTeam(player, team)">Remove Assignment</button></td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>
