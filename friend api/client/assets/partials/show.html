@@ -1,0 +1,8 @@
+<div ng-controller="showUserController">
+  <h3>Welcome To {{user.firstName}}'s page</h3>
+  <ul>
+    <li><strong>Name: </strong> {{user.firstName}} {{user.lastName}}</li>
+    <li><strong>Birth Date: </strong> {{user.dob | date:'medium'}}</li>
+    <li><strong>User ID: </strong> {{user._id}}</li>
+  </ul>
+</div>

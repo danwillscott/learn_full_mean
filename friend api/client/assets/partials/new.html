@@ -1,0 +1,16 @@
+<div ng-controller="newUserController">
+  <div class="card">
+    <div class="card-content blue-grey z-depth-2">
+      <div class="card-title"> New Friend! </div>
+      <form>
+        <label class="black-text" for="first-name">First Name</label>
+        <input id="first-name" type="text" ng-model="newFriend.firstName">
+        <label class="black-text" for="last-name">Last Name</label>
+        <input id="last-name" type="text" ng-model="newFriend.lastName">
+        <label class="black-text" for="dob">Date Of Birth</label>
+        <input id="dob" type="date" ng-model="newFriend.dob">
+        <button class="btn-flat waves-effect green" type="submit" ng-click="createFriend()">Create user</button>
+      </form>
+    </div>
+  </div>
+</div>
