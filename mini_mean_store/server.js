@@ -21,5 +21,5 @@ let routing = require('./server/config/routes.js');
 routing(app);
 
 app.listen(port, function () {
-    console.log(`Server: Robot is Online Reviewing Primary Directives. Prepare Port ${ port } For Destruction!`)
+    console.log(`Shield Frequencies Set to ${ port }`)
 });

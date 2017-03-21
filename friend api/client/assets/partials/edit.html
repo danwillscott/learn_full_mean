@@ -18,13 +18,14 @@
           <label for="last-name">Update Last Name</label>
           <input id="last-name" type="text" placeholder="Last Name" ng-model="editedUser.lastName">
           <label for="birth-day">Update Birthday</label>
-          <input id="birth-day" type="date"  ng-model="editedUser.dateOfBirth">
+          <input id="birth-day" type="date"  ng-model="editedUser.dob">
+          <p class="red-text" ng-if="badData" ng-bind="badData"></p>
         </div>
       </div>
     </div>
     <div class="card-action">
       <button class="btn-flat yellow black-text" ng-click="editUser()">Update {{user.firstName}}</button>
-      <a class="btn-flat red black-text">Delete {{user.firstName}}</a>
+      <!--<a class="btn-flat red black-text">Delete {{user.firstName}}</a>-->
     </div>
   </form>
 </div>

@@ -1,0 +1,44 @@
+<div>
+  <h1>Orders</h1>
+  <form>
+    <label for="customer"></label>
+    <select id="customer">
+      <option disabled value="">Select A Customer</option>
+    </select>
+    <label for="quantity"></label>
+    <select id="quantity">
+      <option disabled value="">Quantity</option>
+    </select>
+    <label for="product"></label>
+    <select id="product">
+      <option disabled value="">Product</option>
+    </select>
+  </form>
+  <h4>Ordered Products</h4>
+<input placeholder="Filter Below">
+  <table>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Fake Name</td>
+      <td>Fake Name</td>
+      <td>Fake Name</td>
+      <td>Fake Name</td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>

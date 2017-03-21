@@ -1,7 +1,7 @@
 /**
  * Created by danielscott on 3/19/17.
  */
-console.log('routes.js loaded');
+console.log('Server: routes.js loaded');
 let friends = require('../controllers/friends');
 module.exports = function(app){
     // This is the main page it pulls all users

@@ -2,7 +2,7 @@
  * Created by danielscott on 3/19/17.
  */
 
-console.log('Server: friends model connected');
+console.log('Server: Friend model connected');
 let mongoose = require('mongoose');
 
 let FriendSchema = new mongoose.Schema({
