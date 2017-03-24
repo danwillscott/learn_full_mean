@@ -9,7 +9,7 @@ let Schema = mongoose.Schema;
 let ProductSchema = new mongoose.Schema({
     name: String,
     url: String,
-    description: Date,
+    description: String,
     quantity: Number,
     order: {type: Schema.Types.ObjectId, ref: 'Order'}
 }, {

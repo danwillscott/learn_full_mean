@@ -1,9 +1,15 @@
 <div ng-controller="customerController">
   <h5 class="blue-grey-text">Add New Customer</h5>
+
+  <!--New Customer Section-->
   <div class="row">
-    <form class="col s5">
+    <form name="customerForm" novalidate class="col s5">
       <label for="name">Customer Name</label>
-      <input placeholder="Name.." id="name" type="text" ng-model="newCustomer.name">
+      <input name="customer" placeholder="Name.." id="name" type="text" ng-model="newCustomer.name" ng-required="customerForm">
+      <ul>
+        <!--<li ng-if="customerForm.$submitted && !customerForm.customer.$valid" class="red-text">Customer Name Required</li>-->
+        <li ng-if="customerErrors.error" class="red-text" ng-bind="customerErrors.message"></li>
+      </ul>
       <button type="submit" class="btn-flat blue accent-3" ng-click="createCustomer()">Submit Customer</button>
     </form>
     <div class="col s2"> </div>
@@ -12,6 +18,8 @@
       <input placeholder="Search.." id="search" ng-model="customerSearch">
     </form>
   </div>
+
+  <!--All Customers Section-->
   <h4 class="center blue-grey-text">Current Customers: {{customers.result.length}} </h4>
   <div>
     <table class="centered">
@@ -23,7 +31,7 @@
         </tr>
       </thead>
       <tbody>
-      <tr ng-repeat="customer in customers.result | filter:customerSearch">
+      <tr ng-repeat="customer in customers.result | filter:customerSearch | orderBy: '-createdAt' ">
         <td ng-bind="customer.name"></td>
         <td ng-bind="customer.createdAt | date:'h:mm:ss a EEEE MMMM dd yyyy'"></td>
         <td><button class="btn-flat red" value="{{customer._id}}" ng-click="deleteCustomer(customer._id)">Delete</button></td>
@@ -31,4 +39,7 @@
       </tbody>
     </table>
   </div>
+
+  <!--Bottom of page spacer-->
+  <h1>&nbsp;</h1>
 </div>

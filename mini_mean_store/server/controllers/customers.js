@@ -1,6 +1,7 @@
 /**
  * Created by danielscott on 3/21/17.
  */
+
 let mongoose = require('mongoose');
 let Customer = mongoose.model('Customer');
 console.log('Server: Customer controller');
@@ -22,20 +23,21 @@ module.exports = {
         console.log(req.body);
         Customer.create(req.body, function (err, result) {
             if(err){
-                res.json({result: result, error: result.errors})
-            }else{
+                res.json({result: err, error: true})
+            } else {
                 res.json({result: result, error: false});
             }
         });
     },
+
     delete: function(req,res){
         console.log('Server: Customer Controller Delete Customer');
         Customer.remove({_id: req.params.id}, function (err) {
             if(err){
-                console.log('Server: Error Deleting User')
-                res.json({error: true});
+                console.log('Server: Error Deleting User');
+                res.json({result: err, error: true});
             } else {
-                console.log('Server: User Deleted')
+                console.log('Server: Customer Deleted');
                 res.json({error: false})
             }
         });
