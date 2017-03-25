@@ -26,7 +26,7 @@
 // display errors or display content.
 // Unlock Code bQGYq2tD
 
-app.controller('dashboardController', ['dashboardFactory', '$scope', '$cookies', function (dashboardFactory, $scope, $cookies) {
+app.controller('dashController', ['dashboardFactory', '$scope', '$cookies', function (dashboardFactory, $scope, $cookies) {
 
 
     // Dashboard

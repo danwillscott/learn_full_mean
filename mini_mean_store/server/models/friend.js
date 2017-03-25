@@ -1,5 +1,5 @@
 /**
- * Created by danielscott on 3/19/17.
+ * Created by daniel scott on 3/19/17.
  */
 
 console.log('Server: Friend model connected');
